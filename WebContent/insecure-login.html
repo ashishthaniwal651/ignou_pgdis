@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insecure Login</title>
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"
+	integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+	crossorigin="anonymous">
+</script>
+<script type="text/javascript"
+	src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.0/dist/jquery.validate.min.js">
+</script>
+<script type="text/javascript">
+	$(document).ready(function() {
+		$("#loginForm").validate({
+			rules : {
+				userid : "required",
+				password : "required",
+			},
+			messages : {
+				userid : "Please enter User-id",
+				password : "Please enter Password"
+			}
+		});
+	});
+</script>
+</head>
+<body>
+	<div style="text-align: center">
+		<form action="insecure-login.jsp" method="post" id="loginForm">
+			<label for="userid">User-id:</label> 
+			<input type="text" name="userid" /><br><br>
+			<label for="password">Password:</label>
+			<input type="password" name="password" /><br><br>
+			<button type="submit">Insecure Login</button>
+		</form>
+	</div>
+</body>
+</html>
